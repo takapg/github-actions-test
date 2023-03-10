@@ -3,15 +3,15 @@ name: child
 on:
   workflow_call:
     inputs:
-      paths:
+      path_group:
         required: true
         type: string
 
 jobs:
-  main:
+  apply:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        path: ${{ fromJson(inputs.paths) }}
+        path: ${{ fromJson(inputs.path_group).paths }}
     steps:
       - run: echo ${{ matrix.path }}
