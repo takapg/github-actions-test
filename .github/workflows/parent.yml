@@ -9,7 +9,7 @@ jobs:
   main:
     strategy:
       matrix:
-        paths: ['["network", "storage"]']
+        paths: ['{ "paths": ["network", "storage"] }']
     uses: ./.github/workflows/child.yml
     with:
       target: ${{ matrix.paths }}
