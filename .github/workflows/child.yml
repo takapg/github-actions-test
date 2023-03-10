@@ -10,9 +10,8 @@ on:
 jobs:
   main:
     runs-on: ubuntu-latest
-    # strategy:
-    #   matrix:
-    #     path:${{ fromJson(inputs.target).paths }}
+    strategy:
+      matrix:
+        path:${{ inputs.paths }}
     steps:
-      - run: echo ${{ inputs.paths }}
-      # - run: echo ${{ matrix.path }}
+      - run: echo ${{ matrix.path }}
