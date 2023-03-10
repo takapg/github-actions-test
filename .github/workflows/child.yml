@@ -3,7 +3,7 @@ name: child
 on:
   workflow_call:
     inputs:
-      target:
+      paths:
         required: true
         type: string
 
@@ -14,5 +14,5 @@ jobs:
     #   matrix:
     #     path:${{ fromJson(inputs.target).paths }}
     steps:
-      - run: echo ${{ inputs.target }}
+      - run: echo ${{ inputs.paths }}
       # - run: echo ${{ matrix.path }}
