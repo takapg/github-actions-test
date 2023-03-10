@@ -12,6 +12,6 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        path:${{ fromJson(inputs.target) }}
+        path:${{ fromJson(inputs.target).paths }}
     steps:
       - run: echo ${{ matrix.path }}
