@@ -11,6 +11,6 @@ jobs:
     strategy:
       matrix:
         target: ["dev", "stage", "prod"]
-    uses: takapg/github-actions-test/.github/workflows/child.yml@main
+    uses: ./.github/workflows/child.yml@main
     with:
       target: ${{ matrix.target }}
