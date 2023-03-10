@@ -8,8 +8,9 @@ on:
 jobs:
   main:
     strategy:
+      max-parallel: 1
       matrix:
-        paths: ['["network", "storage"]']
+        paths: ['["network", "storage"]', '["app_01", "app_02"]']
     uses: ./.github/workflows/child.yml
     with:
       paths: ${{ matrix.paths }}
