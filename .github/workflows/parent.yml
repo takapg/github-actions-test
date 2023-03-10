@@ -10,6 +10,6 @@ jobs:
     strategy:
       matrix:
         target: ["dev", "stage", "prod"]
-    uses: ./.github/workflows/child.yml@main
+    uses: ./.github/workflows/child.yml
     with:
       target: ${{ matrix.target }}
