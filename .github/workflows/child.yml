@@ -12,6 +12,6 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        path: ${{ inputs.paths }}
+        path: ${{ formJson(inputs.paths) }}
     steps:
       - run: echo ${{ matrix.path }}
