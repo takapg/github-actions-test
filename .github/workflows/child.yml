@@ -1,0 +1,13 @@
+name: child
+
+on:
+  workflow_call:
+    inputs:
+      target:
+        required: true
+        type: string
+
+jobs:
+  main:
+    steps:
+      - run: echo ${{ inputs.target }}
