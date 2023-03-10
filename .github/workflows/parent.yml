@@ -1,0 +1,16 @@
+name: parent
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  main:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        target: [dev, stage, prod]
+    uses: takapg/github-actions-test/.github/workflows/child.yml@main
+    with:
+      target: ${{ matrix.target }}
