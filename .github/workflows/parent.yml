@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        target: [dev, stage, prod]
+        target: ["dev", "stage", "prod"]
     uses: takapg/github-actions-test/.github/workflows/child.yml@main
     with:
       target: ${{ matrix.target }}
