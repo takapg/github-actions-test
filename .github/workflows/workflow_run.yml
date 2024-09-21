@@ -1,5 +1,7 @@
 name: workflow_run
 on:
+  push:
+    branches: '*'
   workflow_run:
     workflows: ['*']
     types: [requested, completed]
