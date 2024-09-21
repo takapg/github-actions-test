@@ -1,0 +1,22 @@
+name: workflow_run
+on:
+  workflow_run:
+    workflows: ['*']
+    types: [requested, completed]
+jobs:
+  on-requested:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == '' }}
+    steps:
+      - run: echo 'requested'
+      - run: echo '${{ github.event }}'
+  on-success:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    steps:
+      - run: echo 'success'
+  on-failure:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'failure' }}
+    steps:
+      - run: echo 'failure'
