@@ -1,7 +1,7 @@
 name: workflow_run
 on:
   workflow_run:
-    # workflows: [helloworld]
+    workflows: ['*']
     types: [requested, completed]
 jobs:
   on-requested:
