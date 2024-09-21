@@ -8,6 +8,10 @@ on:
         type: string
 
 jobs:
+  echo:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo '${{ toJSON(github.event) }}'
   call_apply:
     strategy:
       max-parallel: 1
