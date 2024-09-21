@@ -2,9 +2,10 @@ name: parent
 
 on:
   workflow_dispatch:
-  push:
-    branches:
-      - main
+    inputs:
+      hoge:
+        required: true
+        type: string
 
 jobs:
   call_apply:
