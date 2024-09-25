@@ -6,10 +6,14 @@ on:
       hoge:
         required: true
         type: string
+      env:
+        required: true
+        type: environment
 
 jobs:
   echo:
     runs-on: ubuntu-latest
+    environment: ${{ inputs.env }}
     steps:
       - run: echo '${{ toJSON(github) }}'
   call_apply:
